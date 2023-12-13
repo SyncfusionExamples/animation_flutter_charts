@@ -42,9 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SfCartesianChart(
         primaryXAxis: CategoryAxis(),
         primaryYAxis: NumericAxis(numberFormat: NumberFormat.compact()),
-        series: <ChartSeries<ChartSampleData, String>>[
+        series: <CartesianSeries<ChartSampleData, String>>[
           ColumnSeries<ChartSampleData, String>(
-             animationDuration: 3000,
+            animationDuration: 3000,
             // Binding the chartData to the dataSource of the column series.
             dataSource: chartData,
             xValueMapper: (ChartSampleData sales, _) => sales.x,
@@ -53,9 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
           LineSeries<ChartSampleData, String>(
             // Binding the chartData to the dataSource of the line series.
             dataSource: chartData,
-             animationDuration: 4000,      
-             // Set animationDelay to 3000 milliseconds for delay the series rendering.      
-             animationDelay: 3000,
+            animationDuration: 4000,
+            // Set animationDelay to 3000 milliseconds for delay the series rendering.
+            animationDelay: 3000,
             xValueMapper: (ChartSampleData sales, _) => sales.x,
             yValueMapper: (ChartSampleData sales, _) =>
                 sales.secondSeriesYValue,
@@ -72,3 +72,4 @@ class ChartSampleData {
   final num? y;
   final num? secondSeriesYValue;
 }
+
